@@ -6,9 +6,9 @@ interface GridBackgroundProps {
 export function GridBackground({ children, className = "" }: GridBackgroundProps) {
   return (
     <div className={`min-h-screen w-full bg-[#f9fafb] relative ${className}`}>
-      {/* Diagonal Fade Grid Background - Top Right */}
+      {/* Fixed Diagonal Fade Grid Background - Top Right */}
       <div
-        className="absolute inset-0 z-0"
+        className="fixed inset-0 z-0"
         style={{
           backgroundImage: `
             linear-gradient(to right, #d1d5db 1px, transparent 1px),

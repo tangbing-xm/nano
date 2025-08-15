@@ -7,17 +7,6 @@ import { useState, useEffect } from "react"
 export function ThemeToggle() {
   const [isDark, setIsDark] = useState(true)
 
-  useEffect(() => {
-    // 检查本地存储的主题设置
-    const savedTheme = localStorage.getItem('theme')
-    if (savedTheme) {
-      setIsDark(savedTheme === 'dark')
-    } else {
-      // 默认为深色主题
-      setIsDark(true)
-    }
-  }, [])
-
   const updateTheme = (dark: boolean) => {
     if (dark) {
       document.documentElement.classList.add('dark')
@@ -25,6 +14,20 @@ export function ThemeToggle() {
       document.documentElement.classList.remove('dark')
     }
   }
+
+  useEffect(() => {
+    // 检查本地存储的主题设置
+    const savedTheme = localStorage.getItem('theme')
+    if (savedTheme) {
+      const isDarkMode = savedTheme === 'dark'
+      setIsDark(isDarkMode)
+      updateTheme(isDarkMode)
+    } else {
+      // 默认为深色主题
+      setIsDark(true)
+      updateTheme(true)
+    }
+  }, [])
 
   const toggleTheme = () => {
     const newIsDark = !isDark
