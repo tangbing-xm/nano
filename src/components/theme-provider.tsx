@@ -13,9 +13,9 @@ export function ThemeProvider() {
         document.documentElement.classList.remove('dark')
       }
     } else {
-      // 默认为深色主题
-      document.documentElement.classList.add('dark')
-      localStorage.setItem('theme', 'dark')
+      // 默认为浅色主题
+      document.documentElement.classList.remove('dark')
+      localStorage.setItem('theme', 'light')
     }
   }, [])
 

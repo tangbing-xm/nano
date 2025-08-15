@@ -5,7 +5,7 @@ import { Button } from "@/components/ui/button"
 import { useState, useEffect } from "react"
 
 export function ThemeToggle() {
-  const [isDark, setIsDark] = useState(true)
+  const [isDark, setIsDark] = useState(false)
 
   const updateTheme = (dark: boolean) => {
     if (dark) {
@@ -23,9 +23,9 @@ export function ThemeToggle() {
       setIsDark(isDarkMode)
       updateTheme(isDarkMode)
     } else {
-      // 默认为深色主题
-      setIsDark(true)
-      updateTheme(true)
+      // 默认为浅色主题
+      setIsDark(false)
+      updateTheme(false)
     }
   }, [])
 
@@ -47,7 +47,7 @@ export function ThemeToggle() {
       {isDark ? (
         <Sun className="h-4 w-4 text-yellow-500" />
       ) : (
-        <Moon className="h-4 w-4 text-muted-foreground" />
+        <Moon className="h-4 w-4 text-slate-600" />
       )}
     </Button>
   )

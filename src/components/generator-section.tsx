@@ -1,12 +1,11 @@
 "use client"
 
 import { Button } from "@/components/ui/button"
-import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
 import { Card, CardContent } from "@/components/ui/card"
-import { Badge } from "@/components/ui/badge"
 import { Upload, Copy, Image as ImageIcon, Type, Sparkles, Zap, Loader2, Download, X } from "lucide-react"
 import { useState, useRef } from "react"
+import Image from "next/image"
 
 interface GenerationResult {
   id: string
@@ -204,10 +203,13 @@ export function GeneratorSection() {
                   {uploadedImage ? (
                     <div className="relative border-2 border-border rounded-lg p-4">
                       <div className="flex items-center space-x-3">
-                        <img 
+                        <Image 
                           src={uploadedImage} 
                           alt="Uploaded" 
+                          width={64}
+                          height={64}
                           className="w-16 h-16 object-cover rounded-lg"
+                          unoptimized
                         />
                         <div className="flex-1">
                           <p className="text-sm font-medium">{uploadedFileName}</p>
@@ -335,10 +337,13 @@ export function GeneratorSection() {
                   </>
                 ) : generationResult ? (
                   <>
-                    <img 
+                    <Image 
                       src={generationResult.imageUrl} 
                       alt={`Generated: ${generationResult.prompt}`}
+                      width={400}
+                      height={400}
                       className="w-full h-full object-contain rounded-lg"
+                      unoptimized
                     />
                     <div className="absolute bottom-2 left-2 right-2 bg-black/50 backdrop-blur-sm rounded p-2">
                       <p className="text-white text-xs truncate">{generationResult.prompt}</p>

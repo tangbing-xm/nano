@@ -55,7 +55,7 @@ export function ReviewsSection() {
                 <div className="relative">
                   <Quote className="w-6 h-6 text-muted-foreground mb-2" />
                   <p className="text-muted-foreground italic leading-relaxed">
-                    "{review.content}"
+                    &ldquo;{review.content}&rdquo;
                   </p>
                 </div>
               </CardContent>
