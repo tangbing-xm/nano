@@ -32,9 +32,6 @@ export function Navbar() {
             <Link href="#generator" className="text-muted-foreground hover:text-foreground transition-colors">
               Try Generator
             </Link>
-            <Link href="/generator" className="text-muted-foreground hover:text-foreground transition-colors">
-              Full Generator
-            </Link>
             <Link href="#faq" className="text-muted-foreground hover:text-foreground transition-colors">
               FAQ
             </Link>
@@ -74,9 +71,6 @@ export function Navbar() {
               </Link>
               <Link href="#generator" className="text-muted-foreground hover:text-foreground transition-colors">
                 Try Generator
-              </Link>
-              <Link href="/generator" className="text-muted-foreground hover:text-foreground transition-colors">
-                Full Generator
               </Link>
               <Link href="#faq" className="text-muted-foreground hover:text-foreground transition-colors">
                 FAQ
