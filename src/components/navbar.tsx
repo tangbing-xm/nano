@@ -5,9 +5,12 @@ import { Button } from "@/components/ui/button"
 import { Menu, Sparkles } from "lucide-react"
 import { useState } from "react"
 import { ThemeToggle } from "@/components/theme-toggle"
+import { createScrollHandler } from "@/lib/scroll-utils"
 
 export function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
+  
+  const handlePricingClick = createScrollHandler('pricing', () => setIsMenuOpen(false))
 
   return (
     <nav className="fixed top-0 w-full z-50 bg-background/80 backdrop-blur-sm border-b border-border">
@@ -32,6 +35,12 @@ export function Navbar() {
             <Link href="#generator" className="text-muted-foreground hover:text-foreground transition-colors">
               Try Generator
             </Link>
+            <button 
+              onClick={handlePricingClick}
+              className="text-muted-foreground hover:text-foreground transition-colors"
+            >
+              Pricing
+            </button>
             <Link href="#faq" className="text-muted-foreground hover:text-foreground transition-colors">
               FAQ
             </Link>
@@ -72,6 +81,12 @@ export function Navbar() {
               <Link href="#generator" className="text-muted-foreground hover:text-foreground transition-colors">
                 Try Generator
               </Link>
+              <button 
+                onClick={handlePricingClick}
+                className="text-muted-foreground hover:text-foreground transition-colors text-left"
+              >
+                Pricing
+              </button>
               <Link href="#faq" className="text-muted-foreground hover:text-foreground transition-colors">
                 FAQ
               </Link>

@@ -3,6 +3,7 @@ import { FeaturesSection } from "@/components/features-section"
 import { GeneratorSection } from "@/components/generator-section"
 import { ShowcaseSection } from "@/components/showcase-section"
 import { ReviewsSection } from "@/components/reviews-section"
+import { PricingSection } from "@/components/pricing-section"
 import { FAQSection } from "@/components/faq-section"
 import { GridBackground } from "@/components/grid-background"
 import { FadeInSection } from "@/components/fade-in-section"
@@ -32,6 +33,10 @@ export default function Home() {
         </FadeInSection>
         
         <FadeInSection delay={300} direction="up">
+          <PricingSection />
+        </FadeInSection>
+        
+        <FadeInSection delay={350} direction="up">
           <FAQSection />
         </FadeInSection>
       </main>
